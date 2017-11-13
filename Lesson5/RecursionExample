@@ -1,0 +1,30 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package recursionexample;
+import java.util.Scanner;
+/**
+ *
+ * @author Vasiliki
+ */
+public class RecursionExample {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner input = new Scanner (System.in);
+        System.out.println("Give me an integer: ");
+         int n = input.nextInt();
+         int factorial = (int) factorial(n);
+         System.out.println("Factorial of integer: "+factorial);
+    }
+    public static long factorial(int n) {
+        if (n == 0 || n==1)
+            return 1;
+        return n * factorial (n-1);
+       
+    }
+}
