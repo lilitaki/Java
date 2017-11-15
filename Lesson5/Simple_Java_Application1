@@ -54,7 +54,7 @@ public class Simple_Java_Application1 {
             switch(i){
                 case 1: writer.println("Line "+i+": "+last_name+", "+first_name+", "+father_name);
                 break;
-                case 2: writer.println("Line "+i+": "+birthday);
+                case 2: writer.println("Line "+i+": Your birthday is on "+birthday);
                 break;
                 default:
                   writer.println("Line "+i+": "+"Your age is "+age);  
