@@ -1,0 +1,66 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package simple_java_application1;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+/**
+ *
+ * @author Vasiliki
+ */
+public class Simple_Java_Application1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Give me your last name");
+        String last_name = input.next();
+        
+        System.out.println("Give me your first name");
+        String first_name = input.next();
+        
+        System.out.println("Give me your father's name");
+        String father_name = input.next();
+        
+        System.out.println("Give me your  day of birth (xx)");
+        int day = input.nextInt();
+        
+        System.out.println("Give me your month of birth (xx)");
+        int month = input.nextInt();
+        
+        System.out.println("Give me your year of birth (xxxx)");
+        int year = input.nextInt();
+        
+        String birthday = String.format("%d/%d/%d",day,month,year);
+        
+        PrintWriter writer = null;
+        try {
+            writer = new PrintWriter("lastname.firstname.txt", "UTF-8");
+        } catch (FileNotFoundException | UnsupportedEncodingException ex) {
+            Logger.getLogger(Simple_Java_Application1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        int i;
+        int age= (2017-year);
+        for (i=1; i<4; i++){
+            switch(i){
+                case 1: writer.println("Line "+i+": "+last_name+", "+first_name+", "+father_name);
+                break;
+                case 2: writer.println("Line "+i+": "+birthday);
+                break;
+                default:
+                  writer.println("Line "+i+": "+"Your age is "+age);  
+                writer.close();
+            }
+        }  
+    }
+    
+}
