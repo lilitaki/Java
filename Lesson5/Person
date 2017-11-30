@@ -1,0 +1,71 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package simple_java_application2;
+
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author Vasiliki
+ */
+public class Person {
+    private String last_name;
+    private String first_name;
+    private String father_name;
+    private String birthday;
+    private String WriteString; 
+    
+    public void setLast_name(String last_name){
+        this.last_name = last_name;
+    }
+    public String getLast_name(){
+        return this.last_name;
+    }
+    public void setFist_name(String first_name){
+        this.first_name = first_name;
+    }
+    public String getFist_name(){
+        return this.first_name;
+    }
+    public void setFather_name(String father_name){
+        this.father_name = father_name;
+    }
+    public String getFather_name(){
+        return this.father_name;
+    }
+    public void setBirthday(int day, int year, int month){
+        this.birthday = String.format("%d/%d/%d",day,month,year);
+    }
+    public String getBirthday(){
+        return this.birthday;
+    }
+    public void WriteString(int year){
+        PrintWriter writer = null;
+        try {
+            writer = new PrintWriter(this.last_name +"."+ this.first_name+".txt", "UTF-8");
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Person.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedEncodingException ex) {
+            Logger.getLogger(Person.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        for (int i=1; i<4; i++){
+            switch(i){
+                case 1: writer.println("Line "+i+": "+this.last_name+", "+this.first_name+", "+this.father_name);
+                break;
+                case 2: writer.println("Line "+i+": Your birthday is on "+this.birthday);
+                break;
+                default: writer.println("Line "+i+": "+"Your age is "+(2017-year)); 
+                writer.close();
+                break;
+            }
+        
+    }
+}
+}
