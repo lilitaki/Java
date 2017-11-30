@@ -1,0 +1,47 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package simple_java_application2;
+import java.util.Scanner;
+/**
+ *
+ * @author Vasiliki
+ */
+public class Simple_Java_Application2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Person person = new Person();
+        
+        System.out.println("Give me your last name");
+        String last_name = input.next();
+        
+        System.out.println("Give me your first name");
+        String first_name = input.next();
+        
+        System.out.println("Give me your father's name");
+        String father_name = input.next();
+        
+        System.out.println("Give me your  day of birth (xx)");
+        int day = input.nextInt();
+        
+        System.out.println("Give me your month of birth (xx)");
+        int month = input.nextInt();
+        
+        System.out.println("Give me your year of birth (xxxx)");
+        int year = input.nextInt();
+        
+        
+        person.setLast_name(last_name);
+        person.setFist_name(first_name);
+        person.setFather_name(father_name);
+        person.setBirthday(day, year, month);
+        person.WriteString(year);
+    }
+    
+}
